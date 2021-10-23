@@ -1,4 +1,3 @@
 package za.co.izakvdhoven.kmmplayground.ui
 
-class Message {
-}
+data class Message(val title: String, val body: String)
