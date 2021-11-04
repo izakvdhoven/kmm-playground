@@ -13,6 +13,7 @@ dependencies {
     implementation("androidx.annotation:annotation:1.2.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+    implementation("io.insert-koin:koin-android:3.1.1")
 }
 
 android {
