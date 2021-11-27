@@ -6,5 +6,5 @@ val helloModule = module {
 
     single { HelloMessageData() }
 
-    single { HelloServiceImpl(get()) as HelloService }
+    single<HelloService> { HelloServiceImpl() }
 }
