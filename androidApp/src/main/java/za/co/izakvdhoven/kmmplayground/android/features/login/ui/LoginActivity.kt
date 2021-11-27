@@ -5,11 +5,15 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import za.co.izakvdhoven.kmmplayground.android.databinding.ActivityLoginBinding
+import za.co.izakvdhoven.kmmplayground.di.HelloService
 import za.co.izakvdhoven.kmmplayground.features.login.ui.LoginViewData
 import za.co.izakvdhoven.kmmplayground.features.login.ui.LoginViewStateData
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), KoinComponent {
+    private val helloService by inject<HelloService>()
 
     private lateinit var viewModel: LoginViewModel
     private lateinit var binding: ActivityLoginBinding
@@ -27,7 +31,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         configureViews(viewModel.viewData)
         observeViewState()
+        sayHello()
     }
+
+    private fun sayHello() = println(helloService.hello())
 
     private fun configureViews(viewData: LoginViewData) {
         with(viewData) {
