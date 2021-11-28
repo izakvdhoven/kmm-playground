@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import za.co.izakvdhoven.kmmplayground.data.DataState
+import za.co.izakvdhoven.kmmplayground.core.data.DataState
 import za.co.izakvdhoven.kmmplayground.features.login.AuthenticationResult
 import za.co.izakvdhoven.kmmplayground.features.login.Authenticator
 import za.co.izakvdhoven.kmmplayground.features.login.ui.LoginViewData
