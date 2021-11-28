@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import za.co.izakvdhoven.kmmplayground.android.databinding.ActivityLoginBinding
@@ -15,7 +15,7 @@ import za.co.izakvdhoven.kmmplayground.features.login.ui.LoginViewStateData
 class LoginActivity : AppCompatActivity(), KoinComponent {
     private val helloService by inject<HelloService>()
 
-    private lateinit var viewModel: LoginViewModel
+    private val viewModel: LoginViewModel by viewModel()
     private lateinit var binding: ActivityLoginBinding
     private val username by lazy { binding.username }
     private val password by lazy { binding.password }
@@ -25,7 +25,6 @@ class LoginActivity : AppCompatActivity(), KoinComponent {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = ViewModelProvider(this, LoginViewModelFactory()).get(LoginViewModel::class.java)
         binding = ActivityLoginBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
