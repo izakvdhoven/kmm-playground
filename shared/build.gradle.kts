@@ -31,11 +31,11 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
                 implementation("io.insert-koin:koin-core:3.1.1")
-                implementation("io.ktor:ktor-client-core:1.6.6")
-                implementation("io.ktor:ktor-client-logging:1.6.6")
-                implementation("io.ktor:ktor-client-serialization:1.6.6")
+                implementation("io.ktor:ktor-client-core:1.6.3")
+                implementation("io.ktor:ktor-client-logging:1.6.3")
+                implementation("io.ktor:ktor-client-serialization:1.6.3")
                 implementation("ch.qos.logback:logback-classic:1.2.6")
             }
         }
@@ -48,7 +48,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-android:1.6.6")
+                implementation("io.ktor:ktor-client-android:1.6.3")
             }
         }
         val androidTest by getting {
@@ -59,7 +59,7 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-ios:1.6.6")
+                implementation("io.ktor:ktor-client-ios:1.6.3")
             }
         }
         val iosTest by getting

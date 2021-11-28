@@ -1,4 +1,5 @@
 import SwiftUI
+import shared
 
 @main
 struct iOSApp: App {
@@ -9,9 +10,9 @@ struct iOSApp: App {
 	}
 
 	init() {
-	    _ = DI { _ in }
+	    _ = DI(enableNetworkLogs: true) { _ in }
 
 	    let helloService = HelloServiceImpl()
-	    print(helloService.hello()
+	    print(helloService.hello())
 	}
 }
