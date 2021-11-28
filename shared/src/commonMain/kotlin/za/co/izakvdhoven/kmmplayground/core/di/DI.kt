@@ -13,8 +13,7 @@ class DI(enableNetworkLogs: Boolean = false, appDeclaration: KoinAppDeclaration 
             modules(
                 coreModule(enableNetworkLogs),
                 loginModule,
-                charactersModule,
-                helloModule
+                charactersModule
             )
         }
     }
