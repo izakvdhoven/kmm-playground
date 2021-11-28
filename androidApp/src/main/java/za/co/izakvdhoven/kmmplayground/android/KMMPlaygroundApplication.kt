@@ -2,13 +2,13 @@ package za.co.izakvdhoven.kmmplayground.android
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
-import za.co.izakvdhoven.kmmplayground.di.DI
+import za.co.izakvdhoven.kmmplayground.core.di.*
 
 class KMMPlaygroundApplication: Application() {
     override fun onCreate() {
         super.onCreate()
 
-        DI {
+        DI(true) {
             androidContext(this@KMMPlaygroundApplication)
         }
     }

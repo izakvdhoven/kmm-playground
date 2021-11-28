@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import za.co.izakvdhoven.kmmplayground.android.databinding.ActivityLoginBinding
-import za.co.izakvdhoven.kmmplayground.di.HelloService
+import za.co.izakvdhoven.kmmplayground.core.di.HelloService
 import za.co.izakvdhoven.kmmplayground.features.login.ui.LoginViewData
 import za.co.izakvdhoven.kmmplayground.features.login.ui.LoginViewStateData
 

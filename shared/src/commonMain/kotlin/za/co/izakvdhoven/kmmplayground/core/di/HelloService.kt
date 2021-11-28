@@ -1,4 +1,4 @@
-package za.co.izakvdhoven.kmmplayground.di
+package za.co.izakvdhoven.kmmplayground.core.di
 
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject

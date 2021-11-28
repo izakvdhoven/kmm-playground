@@ -1,12 +1,12 @@
-package za.co.izakvdhoven.kmmplayground.data
+package za.co.izakvdhoven.kmmplayground.core.data
 
-open class DataState<out T: Any?>(
-    val result: Result<T>? = null,
+abstract class DataState<out T: Any?>(
+    val result: DataResult<T>? = null,
     val loading: Boolean = false
 ) {
     class Idle<out T: Any?>: DataState<T>()
     class Loading<out T: Any?>: DataState<T>(loading = true)
-    class Complete<out T: Any?>(data: Result<T>): DataState<T>(result = data)
+    class Complete<out T: Any?>(data: DataResult<T>): DataState<T>(result = data)
 
     fun isIdle() = this is Idle
     fun isLoading() = this is Loading

@@ -1,8 +1,8 @@
 package za.co.izakvdhoven.kmmplayground.features.login.ui
 
-import za.co.izakvdhoven.kmmplayground.data.DataState
+import za.co.izakvdhoven.kmmplayground.core.data.DataState
 import za.co.izakvdhoven.kmmplayground.features.login.AuthenticationResult
-import za.co.izakvdhoven.kmmplayground.ui.Message
+import za.co.izakvdhoven.kmmplayground.core.ui.Message
 
 open class LoginViewStateData(
     val isLoading: Boolean = false,
