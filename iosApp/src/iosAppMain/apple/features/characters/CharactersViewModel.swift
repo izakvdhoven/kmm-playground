@@ -2,13 +2,13 @@ import Foundation
 import shared
 import Combine
 
-class CharactersViewModel: ObservableObject {
+public class CharactersViewModel: ObservableObject {
     private let fetcher: CharactersFetcher
     private let provider: CharactersProvider
 
     @Published private var isLoading: Bool = false
     @Published private var fetcherResult: FetcherResult? = nil
-    @Published var characters: [CharacterViewData] = []
+    @Published public var characters: [CharacterViewData] = []
 
     private var charactersCancellable: AnyCancellable?
 
@@ -26,7 +26,7 @@ class CharactersViewModel: ObservableObject {
         }
     }
 
-    func fetchCharacters() {
+    public func fetchCharacters() {
         isLoading = true
         fetcher.fetchCharacters(forcedRefresh: true) { fetcherResult, error in
             self.fetcherResult = fetcherResult
