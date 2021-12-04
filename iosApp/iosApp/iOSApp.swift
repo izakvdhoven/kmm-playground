@@ -3,6 +3,7 @@ import shared
 
 @main
 struct iOSApp: App {
+    
 	var body: some Scene {
 		WindowGroup {
 			ContentView()
@@ -11,8 +12,5 @@ struct iOSApp: App {
 
 	init() {
 	    _ = DI(enableNetworkLogs: true) { _ in }
-
-	    let helloService = HelloServiceImpl()
-	    print(helloService.hello())
 	}
 }

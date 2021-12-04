@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import za.co.izakvdhoven.kmmplayground.android.databinding.ItemCharacterBinding
-import za.co.izakvdhoven.kmmplayground.android.features.characters.CharacterViewData
 
 class CharactersListAdapter(
     private var characters: List<CharacterViewData> = listOf(),

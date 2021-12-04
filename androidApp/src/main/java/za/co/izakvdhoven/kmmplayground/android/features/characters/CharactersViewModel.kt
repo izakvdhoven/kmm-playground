@@ -1,14 +1,13 @@
 package za.co.izakvdhoven.kmmplayground.android.features.characters
 
-import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import za.co.izakvdhoven.kmmplayground.android.features.characters.ui.CharacterViewData
 import za.co.izakvdhoven.kmmplayground.core.fetchers.FetcherResult
 import za.co.izakvdhoven.kmmplayground.features.characters.domain.fetchers.CharactersFetcher
 import za.co.izakvdhoven.kmmplayground.features.characters.domain.models.Character
@@ -50,24 +49,10 @@ abstract class CharactersViewData(
             return when {
                 isLoading -> Loading()
                 fetcherResult == null -> Idle()
-                fetcherResult is FetcherResult.Success && characters != null -> Success(characters.map { CharacterViewData.from(it) })
+                fetcherResult is FetcherResult.Success && characters != null -> Success(characters.map { CharacterViewData(it) })
                 fetcherResult is FetcherResult.NoConnection -> NoConnection()
                 else -> GeneralError()
             }
         }
-    }
-}
-
-data class CharacterViewData(
-    val name: String,
-    val status: String,
-    val imageUrl: Uri
-) {
-    companion object {
-        fun from(character: Character) = CharacterViewData(
-            name = character.name,
-            status = character.status,
-            imageUrl = Uri.parse(character.imageUrl)
-        )
     }
 }

@@ -10,26 +10,24 @@ data class Character(
     val imageUrl: String
 ) {
 
-    fun toStore() = CharacterStore(
+    internal constructor(store: CharacterStore) : this(
+        id = store.id,
+        name = store.name,
+        status = store.status,
+        imageUrl = store.imageUrl
+    )
+
+    internal constructor(response: CharacterResponse) : this(
+        id = response.id,
+        name = response.name,
+        status = response.status,
+        imageUrl = response.imageUrl
+    )
+
+    internal fun toStore() = CharacterStore(
         id = id,
         name = name,
         status = status,
         imageUrl = imageUrl
     )
-
-    companion object {
-        fun from(store: CharacterStore) = Character(
-            id = store.id,
-            name = store.name,
-            status = store.status,
-            imageUrl = store.imageUrl
-        )
-
-        fun from(response: CharacterResponse) = Character(
-            id = response.id,
-            name = response.name,
-            status = response.status,
-            imageUrl = response.imageUrl
-        )
-    }
 }

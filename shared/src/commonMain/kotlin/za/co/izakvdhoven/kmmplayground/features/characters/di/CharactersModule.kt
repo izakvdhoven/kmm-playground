@@ -12,7 +12,7 @@ import za.co.izakvdhoven.kmmplayground.features.characters.domain.providers.Char
 import za.co.izakvdhoven.kmmplayground.features.characters.gateways.CharactersGateway
 import za.co.izakvdhoven.kmmplayground.features.characters.gateways.CharactersGatewayImpl
 
-val charactersModule = module {
+internal val charactersModule = module {
 
     single(named(NamedDependencies.CHARACTERS_ENDPOINT)) {
         val baseUrl: String = get(named(NamedDependencies.BASE_URL))

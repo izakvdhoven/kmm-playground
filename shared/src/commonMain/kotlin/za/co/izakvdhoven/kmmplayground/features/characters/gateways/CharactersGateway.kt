@@ -8,11 +8,11 @@ import za.co.izakvdhoven.kmmplayground.core.networking.NetworkResponse
 import za.co.izakvdhoven.kmmplayground.features.characters.gateways.models.CharacterResponse
 import za.co.izakvdhoven.kmmplayground.features.characters.gateways.models.CharactersResponse
 
-interface CharactersGateway {
+internal interface CharactersGateway {
     suspend fun fetchCharacters(): NetworkResponse<List<CharacterResponse>?>
 }
 
-class CharactersGatewayImpl(
+internal class CharactersGatewayImpl(
     private val endpoint: String,
     private val client: HttpClient,
     connectivityHelper: ConnectivityHelper
