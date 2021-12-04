@@ -65,6 +65,10 @@ fastlane/readme.md
 # OS generated files
 .DS_Store
 
+# Xcode
+xcuserdata/
+Pods/
+
 /gradlew
 /app/buildSettings.json
 
