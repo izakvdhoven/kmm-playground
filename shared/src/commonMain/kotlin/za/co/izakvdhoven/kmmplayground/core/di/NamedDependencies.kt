@@ -1,6 +1,6 @@
 package za.co.izakvdhoven.kmmplayground.core.di
 
-enum class NamedDependencies {
+internal enum class NamedDependencies {
     BASE_URL,
     CHARACTERS_ENDPOINT
 }

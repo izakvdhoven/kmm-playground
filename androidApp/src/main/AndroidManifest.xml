@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="za.co.izakvdhoven.kmmplayground.android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="false"
         android:supportsRtl="true"
@@ -10,6 +12,17 @@
         <activity
             android:name=".features.login.ui.LoginActivity"
             android:label="Login"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name=".features.characters.ui.CharactersActivity"
+            android:label="Characters"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

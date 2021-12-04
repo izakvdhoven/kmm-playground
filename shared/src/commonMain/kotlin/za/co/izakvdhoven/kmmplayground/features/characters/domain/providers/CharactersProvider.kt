@@ -9,10 +9,10 @@ interface CharactersProvider {
     val characters: Flow<List<Character>?>
 }
 
-class CharactersProviderImpl(cache: CharactersCache) : CharactersProvider {
+internal class CharactersProviderImpl(cache: CharactersCache) : CharactersProvider {
     override val characters: Flow<List<Character>?> = cache.characters.map { stores ->
         stores?.map { store ->
-            Character.from(store)
+            Character(store)
         }
     }
 }

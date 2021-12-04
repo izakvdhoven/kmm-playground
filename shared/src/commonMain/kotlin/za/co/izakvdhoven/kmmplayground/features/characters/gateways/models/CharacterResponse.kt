@@ -3,7 +3,7 @@ package za.co.izakvdhoven.kmmplayground.features.characters.gateways.models
 import kotlinx.serialization.*
 
 @Serializable
-data class CharacterResponse(
+internal data class CharacterResponse(
     @SerialName("id")
     val id: Int,
     @SerialName("name")

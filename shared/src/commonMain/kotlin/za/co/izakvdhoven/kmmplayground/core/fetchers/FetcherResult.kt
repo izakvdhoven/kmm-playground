@@ -13,7 +13,7 @@ abstract class FetcherResult: DataResult<Nothing>(data = null) {
     class GeneralError: FetcherResult()
 
     companion object {
-        fun <T : Any?> from(response: NetworkResponse<T>): FetcherResult = with(response) {
+        internal fun <T : Any?> from(response: NetworkResponse<T>): FetcherResult = with(response) {
             return when {
                 isSuccessful -> Success()
                 result is NetworkResult.Unauthorised -> InvalidCredentials()

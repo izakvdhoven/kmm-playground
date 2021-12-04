@@ -11,10 +11,11 @@ interface CharactersFetcher {
     suspend fun fetchCharacters(forcedRefresh: Boolean = false): FetcherResult
 }
 
-class CharactersFetcherImpl(
-    private val gateway: CharactersGateway,
-    private val cache: CharactersCache
+internal class CharactersFetcherImpl(
+    val gateway: CharactersGateway,
+    val cache: CharactersCache
 ) : CharactersFetcher {
+
     override suspend fun fetchCharacters(forcedRefresh: Boolean): FetcherResult {
         if (!shouldUpdate(forcedRefresh)) return FetcherResult.Ignored()
         val response = gateway.fetchCharacters()
@@ -26,7 +27,7 @@ class CharactersFetcherImpl(
     }
 
     private fun save(characters: List<CharacterResponse>) {
-        val stores = characters.map { Character.from(it).toStore() }
+        val stores = characters.map { Character(it).toStore() }
         cache.update(stores)
     }
 

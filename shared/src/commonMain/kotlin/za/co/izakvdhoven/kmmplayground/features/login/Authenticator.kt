@@ -17,7 +17,7 @@ interface Authenticator {
     suspend fun authenticate(username: String, password: String): Flow<DataState<AuthenticationResult>>
 }
 
-class MockAuthenticatorImpl : Authenticator {
+internal class MockAuthenticatorImpl : Authenticator {
     override suspend fun authenticate(username: String, password: String): Flow<DataState<AuthenticationResult>> = flow {
         emit(DataState.Loading())
 

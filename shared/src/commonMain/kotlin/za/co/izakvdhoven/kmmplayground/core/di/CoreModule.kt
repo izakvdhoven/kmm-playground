@@ -9,7 +9,7 @@ import org.koin.dsl.module
 import za.co.izakvdhoven.kmmplayground.core.networking.ConnectivityHelper
 import za.co.izakvdhoven.kmmplayground.core.networking.MockConnectivityHelper
 
-fun coreModule(enableNetworkLogs: Boolean) = module {
+internal fun coreModule(enableNetworkLogs: Boolean) = module {
 
     single(named(NamedDependencies.BASE_URL)) {
         "https://rickandmortyapi.com/api"
