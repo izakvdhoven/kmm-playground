@@ -4,7 +4,7 @@ import io.ktor.client.call.*
 import io.ktor.client.features.*
 import io.ktor.client.statement.*
 
-abstract class BaseGateway(val connectivityHelper: ConnectivityHelper) {
+internal abstract class BaseGateway(val connectivityHelper: ConnectivityHelper) {
     suspend inline fun <reified T : Any?> getNetworkResponse(allowEmptyResponse: Boolean = false, call: () -> HttpResponse): NetworkResponse<T> {
         if (connectivityHelper.isConnected.not()) return NetworkResponse(NetworkResult.NoConnection(), null)
 
