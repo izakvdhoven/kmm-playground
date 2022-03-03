@@ -3,14 +3,13 @@ package za.co.izakvdhoven.kmmplayground.features.characters.di
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import za.co.izakvdhoven.kmmplayground.core.di.NamedDependencies
-import za.co.izakvdhoven.kmmplayground.features.characters.cache.CharactersCache
-import za.co.izakvdhoven.kmmplayground.features.characters.cache.CharactersCacheImpl
-import za.co.izakvdhoven.kmmplayground.features.characters.domain.fetchers.CharactersFetcher
-import za.co.izakvdhoven.kmmplayground.features.characters.domain.fetchers.CharactersFetcherImpl
+import za.co.izakvdhoven.kmmplayground.features.characters.domain.cache.CharactersCache
+import za.co.izakvdhoven.kmmplayground.features.characters.domain.cache.CharactersCacheImpl
+import za.co.izakvdhoven.kmmplayground.features.characters.domain.gateways.CharactersGateway
+import za.co.izakvdhoven.kmmplayground.features.characters.domain.gateways.CharactersGatewayImpl
 import za.co.izakvdhoven.kmmplayground.features.characters.domain.providers.CharactersProvider
-import za.co.izakvdhoven.kmmplayground.features.characters.domain.providers.CharactersProviderImpl
-import za.co.izakvdhoven.kmmplayground.features.characters.gateways.CharactersGateway
-import za.co.izakvdhoven.kmmplayground.features.characters.gateways.CharactersGatewayImpl
+import za.co.izakvdhoven.kmmplayground.features.characters.domain.refreshers.CharactersRefresher
+import za.co.izakvdhoven.kmmplayground.features.characters.domain.refreshers.CharactersRefresherImpl
 
 internal val charactersModule = module {
 
@@ -32,13 +31,11 @@ internal val charactersModule = module {
     }
 
     single<CharactersProvider> {
-        CharactersProviderImpl(
-            cache = get()
-        )
+        get<CharactersCache>() as CharactersProvider
     }
 
-    single<CharactersFetcher> {
-        CharactersFetcherImpl(
+    single<CharactersRefresher> {
+        CharactersRefresherImpl(
             gateway = get(),
             cache = get()
         )

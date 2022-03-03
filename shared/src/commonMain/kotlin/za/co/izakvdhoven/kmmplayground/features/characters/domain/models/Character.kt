@@ -1,7 +1,7 @@
 package za.co.izakvdhoven.kmmplayground.features.characters.domain.models
 
-import za.co.izakvdhoven.kmmplayground.features.characters.cache.models.CharacterStore
-import za.co.izakvdhoven.kmmplayground.features.characters.gateways.models.CharacterResponse
+import za.co.izakvdhoven.kmmplayground.features.characters.persistence.models.CharacterStore
+import za.co.izakvdhoven.kmmplayground.features.characters.network.models.CharacterResponse
 
 data class Character(
     val id: Int,

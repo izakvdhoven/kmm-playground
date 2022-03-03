@@ -1,4 +1,4 @@
-package za.co.izakvdhoven.kmmplayground.features.characters.gateways.models
+package za.co.izakvdhoven.kmmplayground.features.characters.network.models
 
 import kotlinx.serialization.*
 

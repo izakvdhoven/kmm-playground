@@ -1,4 +1,4 @@
-package za.co.izakvdhoven.kmmplayground.features.characters.cache.models
+package za.co.izakvdhoven.kmmplayground.features.characters.persistence.models
 
 internal data class CharacterStore(
     val id: Int,

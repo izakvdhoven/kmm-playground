@@ -14,7 +14,7 @@ val androidModule = module {
 
     viewModel {
         CharactersViewModel(
-            fetcher = get(),
+            refresher = get(),
             provider = get()
         )
     }
